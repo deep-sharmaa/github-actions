@@ -20,6 +20,8 @@ jobs:
 
   run-windows-commands:
     runs-on: windows-latest
+    # needs meaning first let finish the run-shell-command job then run this windows job
+    needs: ["run-shell-command"]
     steps:
       - name: Directory PowerShell
         run: Get-Location
